@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editing Services - CHOMOK ASLAM</title>
+    
+    <!-- Google Tag Manager / Meta Pixel / GA4 (আপনার কোড এখানে বসাবেন) -->
+    <script>
+        // GTM Head Script Example
+        // (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        // new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        // j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        // 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        // })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
 
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- GTM Body (NoScript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Header Section -->
+    <header class="top-header">
+        <div class="logo">My Video Studio</div>
+        <div class="contact-buttons">
+            <a href="https://wa.me/8801XXXXXXXXX" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://m.me/yourpage" target="_blank" class="btn btn-messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+            <a href="tel:+8801XXXXXXXXX" class="btn btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+        </div>
+    </header>
+
+    <!-- YouTube Style Category Filter Header -->
+    <nav class="category-nav">
+        <button class="cat-btn active" onclick="filterVideos('all')">All</button>
+        <button class="cat-btn" onclick="filterVideos('documentary')">Documentary</button>
+        <button class="cat-btn" onclick="filterVideos('product')">Product Ads</button>
+        <button class="cat-btn" onclick="filterVideos('thumbnail')">Thumbnails</button>
+    </nav>
+
+    <!-- Hero Section (Photo & Caption) -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>প্রফেশনাল ভিডিও এডিটিং ও VFX সার্ভিস</h1>
+                <p>আমি আপনাকে দিচ্ছি বিশ্বমানের ভিডিও এডিটিং, 3D অ্যানিমেশন এবং মোশন ট্র্যাকিং সুবিধা। আজই আপনার প্রজেক্ট শুরু করুন!</p>
+            </div>
+            <div class="hero-image">
+                <!-- আপনার নিজের ছবি এখানে হবে -->
+                <img src="assets/my-photo.jpg" alt="My Photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Player Section (YouTube Style) -->
+    <main class="main-content">
+        <div class="player-container">
+            <!-- Video Player (Local Drive/GitHub link) -->
+            <video id="mainPlayer" controls autoplay muted>
+                <source src="assets/sample-video.mp4" type="video/mp4">
+            </video>
+            
+            <div class="video-details">
+                <h2 id="videoTitle">স্যাম্পল ভিডিও টাইটেল</h2>
+                <div class="pricing-info">
+                    <span id="totalCost">Total: 500 BDT</span> | 
+                    <span id="advanceCost">Advance: 100 BDT</span>
+                </div>
+                <p id="videoDesc">এই ভিডিওটি এডিটিং করে নিতে চাইলে নিচে অর্ডার করুন। শর্তাবলী প্রযোজ্য...</p>
+                <button class="btn btn-order" onclick="openOrderModal()">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Order Form Modal -->
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeOrderModal()">&times;</span>
+                <h3>অর্ডার সাবমিট করুন</h3>
+                <form id="orderForm">
+                    <input type="text" placeholder="আপনার নাম" required>
+                    <input type="text" placeholder="ফেসবুক আইডি / হোয়াটসঅ্যাপ নাম্বার" required>
+                    <p>বিকাশ সেন্ড মানি করুন এই নাম্বারে: 01XXXXXXXXX (Advance)</p>
+                    <label>পেমেন্ট স্ক্রিনশট আপলোড করুন:</label>
+                    <input type="file" accept="image/*" required>
+                    <button type="submit" class="btn btn-submit">Submit Order</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Video Grid (YouTube Style) -->
+        <div class="video-grid" id="videoGrid">
+            <!-- JavaScript will populate this from content.json -->
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
