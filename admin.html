@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Video Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 25px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            color: #fff;
+        }
+        .admin-container h2, .admin-container h3 {
+            margin-bottom: 20px;
+            color: #ffeb3b;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ddd;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            background: #272727;
+            color: #fff;
+            box-sizing: border-box;
+        }
+        .btn-admin {
+            width: 100%;
+            padding: 12px;
+            background: #25D366;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .btn-admin:hover {
+            background: #1da851;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="admin-container">
+        <h2>অ্যাডমিন ড্যাশবোর্ড</h2>
+        
+        <div class="form-group">
+            <label>অ্যাডমিন পাসওয়ার্ড:</label>
+            <input type="password" id="adminPass" placeholder="আপনার সিক্রেট পাসওয়ার্ড দিন">
+        </div>
+
+        <div class="form-group">
+            <label>GitHub Personal Access Token (PAT):</label>
+            <input type="password" id="githubToken" placeholder="GitHub Token বসান">
+        </div>
+
+        <hr style="border-color: #333; margin: 25px 0;">
+
+        <h3>নতুন ভিডিও বা কনটেন্ট যুক্ত করুন</h3>
+        
+        <div class="form-group">
+            <label>ফাইল নির্বাচন করুন (ভিডিও/ফটো):</label>
+            <input type="file" id="fileUpload">
+        </div>
+
+        <div class="form-group">
+            <label>ভিডিও টাইটেল:</label>
+            <input type="text" id="videoTitleInput" placeholder="যেমন: Wedding Cinematic Edit">
+        </div>
+
+        <div class="form-group">
+            <label>ক্যাটাগরি:</label>
+            <select id="videoCategory">
+                <option value="documentary">Documentary</option>
+                <option value="product">Product Ads</option>
+                <option value="thumbnail">Thumbnails</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>মোট সার্ভিস ফি (Total BDT):</label>
+            <input type="number" id="totalPrice" placeholder="যেমন: 500">
+        </div>
+
+        <div class="form-group">
+            <label>অগ্রিম পেমেন্ট (Advance BDT):</label>
+            <input type="number" id="advancePrice" placeholder="যেমন: 100">
+        </div>
+
+        <div class="form-group">
+            <label>ডেসক্রিপশন / শর্তাবলী:</label>
+            <textarea id="videoDescInput" rows="4" placeholder="ভিডিও বা সার্ভিস সম্পর্কে লিখুন..."></textarea>
+        </div>
+
+        <button class="btn-admin" onclick="uploadToGithub()">Upload & Save to Website</button>
+    </div>
+
+    <!-- অ্যাডমিন লজিক ফাইল লিংক -->
+    <script src="admin.js"></script>
+</body>
+</html>
